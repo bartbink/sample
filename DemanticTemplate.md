@@ -69,21 +69,20 @@ Figure 1 "Hello World" exaple diagram or knoledge graph.
 classDiagram
 direction TB
 class  Hello  {
-greetingText: Hello
-definition: greeting when  encountering someone
+• greetingText: Hello
+• definition: greeting when  encountering someone
 }
 class  World  {
-domainName: earth
-age: 4.54 miljard
-comment: 4.54 billion years  if you  use short  scale
+• domainName: earth
+• age: 4.54 miljard
++ comment: 4.54 billion years  if you  use short  scale
 }
-Hello  "1"  -->  "1..n"  World : Greets
+Hello  "1"  --> "1..n"  World : Greets
 
-style Hello fill:#ffffe0,stroke:#8b0000,stroke-width:2px,color:#8b0000
-style World fill:#ffffe0,stroke:#8b0000,stroke-width:2px,color:#8b0000
+classDef default fill:#ffffe0,stroke:#8b0000,stroke-width:2px,color:#8b0000
 ```
 
-**Entity: Hello**
+## Entity: Hello
 |Name|Description/Definition|
 |--|--|
 | Hello | Represents the  _Hello_  part of  _Hello World_. It symbolizes the entity initiating a greeting. |
@@ -104,7 +103,7 @@ style World fill:#ffffe0,stroke:#8b0000,stroke-width:2px,color:#8b0000
 > refactoring the relationship into a separate class (e.g.,
 > GreetingEvent)
 
-**Entity: World**
+## Entity: World
 |Name|Description/Definition|
 |--|--|
 | World | Represents the  _World_  part of  _Hello World_. It symbolizes the entity initiating a greeting. |
