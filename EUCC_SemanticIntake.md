@@ -4,11 +4,15 @@ Purpose: Capture the story and high-level purpose of the use case “issuing and
 
 ## Storyline
 
-What is the scenario being solved? Member States shall ensure that the registers referred to in Article 16 issue the EU Company Certificate about companies listed in Annexes II and IIB.
+**What is the scenario being solved?**
+
+Member States shall ensure that the registers issue the EU Company Certificates regarding the companies listed in Annexes II and IIB. 
 
 ## Business Context / Motivation
 
-Why is this attestation needed?
+**Why is this attestation needed?**
+
+
 
 ## Stakeholders
 
@@ -20,7 +24,9 @@ When mentioning organisation, every registered Economic Operator is meant.
 
 ## Expected Outcome
 
-What should happen when the attestation is used? The EU Company Certificate shall be accepted in all Member States as conclusive evidence of the incorporation of the company and of the information listed in paragraphs 2 and 3 of this Article, respectively, which is held by the register where the company is registered at the time of the issuance. 
+**What should happen when the attestation is used?**
+
+The EU Company Certificate shall be accepted in all Member States as sufficient evidence, at the time of its issuance, of the incorporation of the company and of the information listed in paragraphs 2 and 3 of this Article, respectively, which is held by the register in which the company is registered.
 
 # Data Model or Knowledge Graph
 
@@ -131,23 +137,42 @@ Purpose: Capture explicit and implicit technical or policy requirements.
 | I001 |  | Monica & Bart | inspect |
 
 ## Legal and Regulatory requirements
+
+From https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=OJ:L_202500025 follows that:<br>
+
 | No. | Requirement | Source | Verification method |
 |--|--|--|--|
-| L001 | The EU Company Certificate for the limited liability companies listed in Annex II shall include the following information, including the date when the information in the EU Company Certificate was last updated in accordance with Article 15(2): | Article 16b | review |
-| L002 | the **name of the company** | Article 16b | review |
-| L003 | the **legal form** of the company | Article 16b | review |
-| L004 | the **registration number** of the company and the Member State where the company is registered | Article 16b | review |
-| L005 | the **EUID** of the company | Article 16b | review |
-| L006 | the **registered office** of the company What is this? (an address) The registered office is the address recorded in the commercial register that determines: under which Member State’s company law the company is incorporated; where official communications and legal documents must be served; and, in most cases, where the company is considered to have its  legal domicile (even if it operates elsewhere). It’s the company’s  formal legal seat, not necessarily its operational headquarters or main place of business.| Article 16b | review |
-| L007 | the **postal or contact address** of the company | Article 16b | review |
-| L008 | the **electronic address** of the company. So this is the URL or email address of the company | Article 16b | review |
-| L009 | the date of registration of the company | Article 16b | review |
-| L010 | the **amount of the capital subscribed**. (an amount and currency | Article 16b | review |
-| L011 | the **status** of the company (ENUM: active, inactive, ...) | Article 16b | review |
-| L012 | the particulars of any persons who either as a body or as members of any such body are **authorised by the company to represent it** with respect to third parties and in legal proceedings and whether those persons may do so alone or are required to act jointly. *(we should talk about this. How deep do we follow the PoA chain? Also we should have a harmonised list of titles of each country.)* | Article 16b | review |
-| L013 | the object of the company (note: some countries don't use the NACE code. Also you should be able to enter a string. NACE (SBI in NL, different codes in BE, WZ in DE)) | Article 16b | review |
-| L014 | the **duration** of the company (needs clarification | Article 16b | review |
-| L015 | details of the **company website** where such details are recorded in the national register. | Article 16b | review |
+| L001 | Member States shall ensure that the registers issue the EU Company Certificates regarding the companies listed in Annexes II and IIB. The EU Company Certificate shall be accepted in all Member States as sufficient evidence, at the time of its issuance, of the incorporation of the company and of the information listed in paragraphs 2 and 3 of this Article, respectively, which is held by the register in which the company is registered. | Article 16b | review |
+| L001 | the EU Company Certificate for the limited liability companies listed in Annex II shall include the following information: | Article 16b | review |
+| L002 | for limited liability companies: the **the name or names of the company** | Article 16b | review |
+| L003 | for limited liability companies: the **legal form** of the company | Article 16b | review |
+| L004 | for limited liability companies: the **registration number** of the company **and the Member State where the company is registered** | Article 16b | review |
+| L005 | for limited liability companies: the **EUID** of the company | Article 16b | review |
+| L006 | for limited liability companies: the **registered office** of the company<br><br>What is this? (an address) The registered office is the address recorded in the commercial register that determines: under which Member State’s company law the company is incorporated; where official communications and legal documents must be served; and, in most cases, where the company is considered to have its  legal domicile (even if it operates elsewhere). It’s the company’s  formal legal seat, not necessarily its operational headquarters or main place of business.| Article 16b | review |
+| L007 | for limited liability companies: the **correspondence address** of the company, such as its electronic mail or postal address | Article 16b | review |
+| L008 | for limited liability companies: the **date of registration** of the company | Article 16b | review |
+| L009 | for limited liability companies: the **amount of the subscribed capital** of the company, if applicable. (an amount and currency | Article 16b | review |
+| L010 | for limited liability companies: the **status** of the company, such as when it is closed, struck off the register, wound up, dissolved, undergoing insolvency proceedings, economically active or inactive as defined in national law and where it is recorded in the national register; (ENUM: active, inactive, ...) | Article 16b | review |
+| L011 | for limited liability companies: the first names, surnames and date of birth, or equivalent information when that date is not recorded in the national register, of **any persons who** either as a body or as members of any such body **are authorised by the company to represent it** in dealings with third parties and in legal proceedings, and whether those persons may do so alone or are required to act jointly<br><br>*(we should talk about this. How deep do we follow the PoA chain? We don't! In the text it clearly states are authorised by the company, that is directly, so it means the shareholders. Also we should have a harmonised list of titles of each country.)* | Article 16b | review |
+| L012 | for limited liability companies: where the persons referred to in point (j) are legal persons, the name, the legal form, the EUID or, where the EUID is not applicable, the registration number. | Article 16b | review |
+| L013 | for limited liability companies: the object of the company, describing its main activity or activities, which can be expressed using the relevant Statistical Classification of Economic Activities in the European Community (NACE) code, where such code is used for the purposes of the register pursuant to applicable national law, and where the object is recorded in the national register.<br><br>(note: because some countries don't use the NACE code, one should be able to enter an other code or string. NACE (SBI in NL, different codes in BE, WZ in DE)) | Article 16b | review |
+| L014 | for limited liability companies: the **duration** of the company, where its duration is limited. | Article 16b | review |
+| L015 | for limited liability companies: details of the company’s **website** where such details are recorded in the national register. | Article 16b | review |
+| L016 | for limited liability companies: the **date of issue of the** company’s **EU Company Certificate**. | Article 16b | review |
+| L017 | The EU Company Certificate for partnerships listed in Annex IIB shall include the information referred to in paragraph 2 of this Article, with the exception of points (e), (h) (j) and (k). The following information shall also be included: | Article 16b | review |
+| L018 | for partnerships: the **registered office, or equivalent**, of the partnership. | Article 16b | review |
+| L019 | for partnerships: the amount of **maximum liability or of the contribution of each limited partner**, where that information is recorded in the national register. | Article 16b | review |
+| L020 | for partnerships: the first names, surnames and date of birth, or equivalent information when that date is not recorded in the national register, of **the partners, directors or other statutory representatives, who are authorised to represent the partnership** in dealings with third parties and in legal proceedings, or, if not applicable, information about the nature and scope of the authorisation of the partners, directors or other representatives to represent the partnership and their particulars. | Article 16b | review |
+| L021 | for partnerships: where the persons referred to in point (c) (this is L018) are legal persons, the name, the legal form, the EUID or, where the EUID is not applicable, the registration number. | Article 16b | review |
+| L022 | for partnerships: where different from points (c) (this is L018 and (d) (this is L019), the first names, surnames and date of birth, or equivalent information when that date is not recorded in the national register, of the general partners, and, in the case of limited partnerships, particulars of the limited partners, where particulars of the latter are made publicly available in the national register. | Article 16b | review |
+| L023 | for partnerships: where the persons referred to in point (e) are legal persons, the name, the legal form, the EUID or, where the EUID is not applicable, the registration number. | Article 16b | review |
+| L024 | Member States shall ensure that the EU Company Certificate can be obtained from the register upon an application submitted to the register by electronic or by paper means.<br>Member States shall ensure that the electronic version of the EU Company Certificate can also be obtained through the system of interconnection of registers. | Article 16b | review |
+| L025 | Member States shall ensure that each company listed in Annex II or Annex IIB can obtain its EU Company Certificate in electronic format free of charge unless it causes serious prejudice to the financing of the national registers. In any case, each company shall be able to obtain its EU Company Certificate free of charge at least once per calendar year.<br>Where a price is charged for obtaining the EU Company Certificate, whether by electronic or by paper means, it shall not exceed the administrative costs thereof, including the costs of development and maintenance of registers. | Article 16b | review |
+| L026 | Member States shall ensure that the EU Company Certificate provided by the register in electronic form is authenticated by means of trust services as referred to in Regulation (EU) No 910/2014 in order to guarantee that it has been provided by the register and that its content is a true copy of the information held by the register or that it is consistent with the information contained therein. The EU Company Certificate shall also be compatible with the European Digital Identity Wallet, as provided for in Regulation (EU) 2024/1183. | Article 16b | review |
+| L027 | Member States shall ensure that the EU Company Certificate provided by the register in paper form includes the date of issuance, as well as the seal or stamp of the register, or equivalent means of authentication, in order to certify that its content is a true copy of the information held by the register or that it is consistent with the information contained therein, and bears a unique protocol or identification number or similar feature that allows the electronic verification of the origin and authenticity of the document. | Article 16b | review |
+| L028 | The Commission shall publish the multilingual template for the EU Company Certificate on the European e-Justice portal (“the portal”) in all official languages of the Union. | Article 16b | review |
+| L029 | . | Article 16b | review |
+| L030 | . | Article 16b | review |
 
 ## Functional requirements
 | No. | Requirement | Source | Verification method |
