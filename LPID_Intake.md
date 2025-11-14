@@ -1,41 +1,24 @@
-# Introduction
+# Use Case Overview of LPID
 
-This is a template to collect information of every use case. The example used is the famous “Hello World”. For that I have to make a disclaimer:
-
-It is an illustrative instance-level example of a class-level model that defines entities, attributes, and relations. The Hello World example is a simplified illustration used to explain class-attribute-relation modeling concepts. “Hello” and “World” represent example entities or classes, not literal data instances.
-
-If you are so inclined, you can refactor it to an instance of the conceptual model. For instance:
-
-    Classes:  Greeting and Audience.
-    Relation:  Greeting greets Audience.
-    Instances:  Hello (instance of Greeting).
-    World (instance of Audience).
-    Statement:  Hello greets World.
-
-# Use Case Overview of Hello World
-
-Purpose: Capture the story and high-level purpose of the use case “Hello World”.
+Purpose: Capture the story and high-level purpose of the use case “LPID” & "PID".
 
 ## Storyline
 
-What is the scenario being solved? A fictional organization, Hello Authority, issues a simple attestation to a holder’s digital wallet.
-
-This attestation confirms that Hello (the issuer entity) has a valid and verifiable connection with World (the subject entity).
-
-The attestation’s only statement is:
-
-“Hello greets World.”
+What is the scenario being solved?
+ + to define and create a PID and LPID
+ + initialising a (buisiness) wallet
+   
 
 ## Business Context / Motivation
 
 Why is this attestation needed?
+PID and LPID To be able to bind a person or buisiness to the wallet an do economic oprations.
 
-The  _Hello World_  use case serves as a minimal, example to demonstrate how an attestation can represent structured information - including entities, attributes, relations, and lifecycle behaviors - within the EU wallet ecosystem (and beyond).
-
-It helps modelers, developers, and policy stakeholders understand how semantics, trust, and lifecycle interact when designing and exchanging digital attestations.
+We need to provide an ID for EVERY organisation or business or even economic operator, not only legal persons. We suggest to rename LPID to organisation ID, business ID or Economic Operator ID. This will also make it possible to incorporate, Shipping company, persons partnership, commercial partnership, Limited partnership and sole traders.
 
 ## Stakeholders
 
+authority or government
 issuer,
 holder,
 verifier,
@@ -44,74 +27,40 @@ etc.
 
 ## Expected Outcome
 
-What should happen when the attestation is used? By the end of the Hello World example, users of the template should understand:
-
-1. How to describe an attestation using structured semantic elements (classes, attributes, relations).
-
-2. If and if so how those elements are linked to trust, lifecycle, and interoperability concerns.
-
-3. How to extend this structure to real-world use cases, e.g., ID, IBAN, or EUCC.
-
-### Meta-purpose
-
-The Hello World attestation is not about greeting the world - it’s about greeting the conceptual structure of attestations themselves. It provides a safe sandbox to explore what it means to model meaning.
+What should happen when the attestation is used?
+ + initialised (business) wallet for any member state, so the wallet can receive other attestations for the economic operator.
+ + 
 
 # Data Model or Knowledge Graph
 
 Purpose: Capture the entities, attributes, and relationships.
 
-The Hello World data model is depicted below. It is a simple model to illustrate the use of data models to capture the use case entities.
 
-![Hello World Data ](https://www.plantuml.com/plantuml/png/bL91ozD04BtlhnZwtPGMX7f9GMfLy20UH2YUPCrEax6xCsLsGWp5_-vkcw35Y-QKztRVUpEFtMVpQaEApiWYmdkCKM0KZS6vDlgSP-hgu5cdY4RSVSOV1itzmC7pW2TYCX8kv787nXuPa5iPs50haoMXC2v66HhtSmavriHRI93aYJ_wXCKDlLfV8dnNqNRpSWk9udUleP2jf8HiC_-DOgmZJ4MJWKumoG13HiYzg45kVSJVUU_OoAPROF8Sl8bEnL8kTGqVwyNRUaqppxfwiOArKjVR-bK1cmslvg6V8Z4sRxsUFs7OMUccEVPa2CtN-ZtM-FIXMdof_-FkR-4C7ahvBycyrpzgN4y1eILj8pgNpyGNhpx1tUlg3huzToe3XpSIHU4FL_TQLSOxlTWTH0Fg8rVVoW9ggtlaK9_RBm00)
-Figure 1 "Hello World" exaple diagram or knoledge graph.
-
-```mermaid
-classDiagram
-direction TB
-class  Hello  {
-• greetingText: Hello
-• definition: greeting when  encountering someone
-}
-class  World  {
-• domainName: earth
-• age: 4.54 miljard
-+ comment: 4.54 billion years  if you  use short  scale
-}
-Hello  "1"  --> "1..n"  World : Greets
-
-classDef default fill:#ffffe0,stroke:#8b0000,stroke-width:2px,color:#8b0000
-```
-
-## Entity: Hello
+## Entity: LPID
 |Name|Description/Definition|
 |--|--|
-| Hello | Represents the  _Hello_  part of  _Hello World_. It symbolizes the entity initiating a greeting. |
+| LPID | Represents the Economic operator. So the name LPID is misleading. We propose EOID. Economic operator means any natural or legal person or public entity or group of such persons and/or entities, including any temporary association of undertakings, which offers the execution of works and/or a work, the supply of products or the provision of services on the market. |
 
 |Attribute| Description | mandatory | private | datatype | 
 |--|--|--|--|--|
-| greetingText | An example of a mandatory attribute that holds the text of the greeting. | yes | no | string |
-| definition | An example of an optional, private attribute describing the greeting or its context. | no | yes | string |
+| EUID | The EUID is defined as in BORIS. However a EOID can be a better name, because it is natural and also covers natural persons. | yes | no | string |
+| regitered name | As stated in the registry as the statutairy name. | no | yes | string |
 
 | Relation | Description | Left Entity | Right Entity | Left Role | Right Role | Cardinality | Optional |
 |--|--|--|--|--|--|--|--|
-| greets | Expresses the relation between Hello (the greeter) and World (the greeted). | Hello | World | greeter | greeted | 1 1..n | no |
+|  |  | Hello | World | greeter | greeted | 1 1..n | no |
 
-> Questions to ask per relation:
-> Check whether the direction (Hello ? World) reflects the dominant
-> flow of meaning.
-> If both sides can have multiple relations (n?n), consider
-> refactoring the relationship into a separate class (e.g.,
-> GreetingEvent)
+> **Questions to ask per relation:**
 
-## Entity: World
+
+## Entity: PID
 |Name|Description/Definition|
 |--|--|
-| World | Represents the  _World_  part of  _Hello World_. It symbolizes the entity initiating a greeting. |
+| PID | Represents the Economic operator. Economic operator means any natural or legal person or public entity or group of such persons and/or entities, including any temporary association of undertakings, which offers the execution of works and/or a work, the supply of products or the provision of services on the market. |
 
 |Attribute| Description | mandatory | private | datatype | 
 |--|--|--|--|--|
-| domainName | A mandatory attribute representing the domain, context, or scope being greeted. | yes | no | string |
-| age | An optional, private attribute showing example metadata about the World. | no | yes | string |
+| - | We need harmonised attributes for the PID. People should be able to use their NP wallet as a business wallet so they can act as an Economic Operator. | yes | no | string |
 
 | Relation | Description | Left Entity | Right Entity | Left Role | Right Role | Cardinality | Optional |
 |--|--|--|--|--|--|--|--|
@@ -165,6 +114,9 @@ Purpose: Capture explicit and implicit technical or policy requirements.
 | I001 | The  _Hello World_  attestation shall serve as an illustrative reference implementation to clarify the intended use of this template and to demonstrate practical dilemmas and opportunities arising at the intersection of semantics, trust, lifecycle management, and real-world usage. While not intended as a production-grade attestation, it should support analysis and discussion of how these dimensions interact within the broader EU wallet ecosystem. | Bart Bink | inspect |
 
 ## Legal and Regulatory requirements
+
+From the directive: <link>
+
 | No. | Requirement | Source | Verification method |
 |--|--|--|--|
 | L001 | The Hello World attestation is currently outside the scope of eIDAS2 compliance requirements. However, its design should not preclude future alignment with eIDAS2 trust frameworks, credential formats, or conformity assessment procedures. | eIDAS2 | review |
@@ -182,7 +134,7 @@ Purpose: Capture explicit and implicit technical or policy requirements.
 ## Operational requirements
 | No. | Requirement | Source | Verification method |
 |--|--|--|--|
-| O001 | The  _Hello World_  attestation shall be automatically reactivated/reissued whenever the user’s associated digital identity attestation is renewed or replaced, in order to maintain a valid binding between the attestation and the user’s active eWallet identity. If the recipient wallet does not support SD-JWT, the issuer MUST issue the attestation as an mDoc. | WEBUILD Semantic Modeling interoperability requirement. | test |
+| O001 | The LPID should be stable over time. | WEBUILD Semantic Modeling interoperability requirement. | test |
 
 ## Governance and trust restrictions
 | No. | Requirement | Source | Verification method |
@@ -192,7 +144,9 @@ Purpose: Capture explicit and implicit technical or policy requirements.
 ## Open Questions / Gaps – For follow-up or design iterations.
 | No. | Question | Why |
 |--|--|--|
-| Q001 | How should the  _Hello World_  attestation’s semantics — including its entities, attributes, and relationships — be aligned with existing vocabularies or ontologies to ensure that other ecosystems or wallet implementations can interpret its meaning consistently?| Where does the authoritative meaning of each attribute come from, and how stable must that be? |
-| Q002 | Which core entities and attributes in the  _Hello World_  attestation should be represented as references to existing EU or W3C vocabularies, and which—if any—require the definition of new, domain-specific terms? | **Information model:** _semantic reuse vs. semantic innovation,_ ensuring interoperability while avoiding redundancy.
-| Q003 | How can we semantically represent the lifecycle states of the  _Hello World_ attestation (e.g., issued, active, revoked, superseded) so that they are machine-interpretable and consistent across issuers and verifiers? | **Lyfe Cycle:** _Lifecycle concepts are often procedural in code_ but implicit in meaning. Defining them semantically enables automation, policy reasoning, and consistent interpretation across ecosystems (outside of the eWallet ecosystem too). |
-| Q004 | What is the most appropriate way to semantically express the binding between the  _Hello World_  attestation, the holder’s identity, and the wallet instance, so that trust can be verified across different infrastructures and trust frameworks? Or is this outside the semantics and part of the meta data in the attestation? | **Trust semantics:** This is about semantic binding—how trust relationships are described and validated, not just cryptographically but meaningfully. It connects the modeling work to governance and policy semantics (who asserts what, on whose behalf, and under which trust framework). |
+| Q001 | Can we change the name LPID to something else? LPID excliudes all organisations except legal persons.||
+| Q002 | how is the LPID issued to sole traders not mentioned in the business registries? | **Information model:** _semantic reuse vs. semantic innovation,_ ensuring interoperability while avoiding redundancy.
+| Q003 | are there any othe attributes that need to be considdered? | **Lyfe Cycle:**. |
+| Q004 | how to cope with organisations/businesses not registered at any registry? | **Trust semantics:** This is about semantic binding—how trust relationships are described and validated, not just cryptographically but meaningfully. It connects the modeling work to governance and policy semantics (who asserts what, on whose behalf, and under which trust framework). ||
+| Q005 | how to harmonise attributes per memberstate for sole traders for instance? | **Lyfe Cycle:**. |
+| Q005 | Do we need all the attributes defined for the PID? The PID will be unstable and make the wallet unactive. | **Lyfe Cycle:**. |
