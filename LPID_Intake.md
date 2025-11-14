@@ -145,8 +145,8 @@ From the directive: <link>
 | No. | Question | Why |
 |--|--|--|
 | Q001 | Can we change the name LPID to something else? LPID excliudes all organisations except legal persons.||
-| Q002 | how is the LPID issued to sole traders not mentioned in the business registries? | **Information model:** _semantic reuse vs. semantic innovation,_ ensuring interoperability while avoiding redundancy.
-| Q003 | are there any othe attributes that need to be considdered? | **Lyfe Cycle:**. |
-| Q004 | how to cope with organisations/businesses not registered at any registry? | **Trust semantics:** This is about semantic binding—how trust relationships are described and validated, not just cryptographically but meaningfully. It connects the modeling work to governance and policy semantics (who asserts what, on whose behalf, and under which trust framework). ||
-| Q005 | how to harmonise attributes per memberstate for sole traders for instance? | **Lyfe Cycle:**. |
-| Q005 | Do we need all the attributes defined for the PID? The PID will be unstable and make the wallet unactive. | **Lyfe Cycle:**. |
+| Q002 | how is the LPID issued to sole traders not mentioned in the business registries? ||
+| Q003 | are there any othe attributes that need to be considdered? |  |
+| Q004 | how to cope with organisations/businesses not registered at any registry? ||
+| Q005 | how to harmonise attributes per memberstate for sole traders for instance? | |
+| Q005 | Do we need all the attributes defined for the PID? The PID will be unstable and make the wallet unactive. | |
